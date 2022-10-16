@@ -16,6 +16,7 @@
     - [service](#service-1)
     - [controller](#controller-1)
 - [rspec](#rspec)
+- [Gemfile](#gemfile)
 
 <!-- /TOC -->
 
@@ -65,3 +66,5 @@
 ### controller
 
 # rspec
+
+# Gemfile

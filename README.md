@@ -60,6 +60,8 @@
 
 ### service
 
+※ここにバリデーションを書く
+
 ### controller
 
 # rspec

@@ -13,7 +13,7 @@
     - [view](#view)
 - [api](#api)
     - [model](#model-1)
-    - [service](#service-1)
+    - [services](#services)
     - [controller](#controller-1)
 - [rspec](#rspec)
 - [Gemfile](#gemfile)
@@ -40,10 +40,12 @@
 ### controller
 
 - `app/controllers/権限名/ドメイン名複数系_controller.rb`
-  - ex) `app/controllers/adminA/tasks_controller.rb`
-  - ex) `app/controllers/adminB/tasks_controller.rb`
+  - ex) `app/controllers/admin/tasks_controller.rb`
+  - ex) `app/controllers/owner/tasks_controller.rb`
+  - ex) `app/controllers/staff/tasks_controller.rb`
 
-※管理画面用のアカウント種別によって異なる権限を付与できる
+※管理画面用のアカウント種別によって異なる権限を付与できる  
+→ DB のレコードによって権限を分ける方法もあり。メリットデメリット
 
 #### コード例
 
@@ -59,7 +61,7 @@
 
 ### model
 
-### service
+### services
 
 ※ここにバリデーションを書く
 

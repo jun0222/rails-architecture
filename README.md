@@ -17,6 +17,7 @@
     - [controller](#controller-1)
 - [rspec](#rspec)
 - [Gemfile](#gemfile)
+- [テスト戦略](#テスト戦略)
 
 <!-- /TOC -->
 
@@ -70,3 +71,9 @@
 # rspec
 
 # Gemfile
+
+# テスト戦略
+- model
+  - 実行も重く無いのでカバレッジ重視してできるだけ多くする
+- requests
+  - テストケースを練ってケース数を増やしすぎない

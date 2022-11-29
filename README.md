@@ -12,9 +12,9 @@
       - [コード例](#コード例-1)
     - [view](#view)
 - [api](#api)
-    - [model](#model-1)
-    - [services](#services)
-    - [controller](#controller-1)
+  - [model](#model-1)
+  - [services](#services)
+  - [controller](#controller-1)
 - [rspec](#rspec)
 - [Gemfile](#gemfile)
 - [テスト戦略](#テスト戦略)
@@ -62,6 +62,8 @@
 
 ### model
 
+※devise の設計に合わせないなら users テーブルと devise 用のテーブルを分ける（大体分けた方が良い）
+
 ### services
 
 ※ここにバリデーションを書く
@@ -73,6 +75,7 @@
 # Gemfile
 
 # テスト戦略
+
 - model
   - 実行も重く無いのでカバレッジ重視してできるだけ多くする
 - requests

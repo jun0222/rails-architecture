@@ -109,7 +109,7 @@ rspec デフォルトのディレクトリを使う。
 - `active_hash` or `config` 定数。active_hash は active record の様に操作できて便利
 - `dotenv-rails` 環境変数用に
 - `ransack` 検索用に
-- `aws-sdk-3s`, carrierwave, fog-aws など 画像アップロード機能
+- `aws-sdk-3s`, `carrierwave`, `fog-aws` など 画像アップロード機能
 - `business_time` など祝日管理用に使う
 
 #### development

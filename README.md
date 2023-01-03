@@ -92,7 +92,7 @@
 - `devise` 管理画面でのでの user 認証で
 - `devise-i18n` devise の文言を設定する
 - `rails-i18n` 全体でエラーなどの文言を設定する
-- `active_hash` or config 定数。active_hash は active record の様に操作できて便利
+- `active_hash` or `config` 定数。active_hash は active record の様に操作できて便利
 - `dotenv-rails` 環境変数用に
 - `ransack` 検索用に
 - `aws-sdk-3s`, carrierwave, fog-aws など 画像アップロード機能

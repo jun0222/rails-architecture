@@ -5,17 +5,13 @@
 - [目次](#目次)
 - [ディレクトリ構成](#ディレクトリ構成)
   - [model](#model)
+    - [注意点](#注意点)
+  - [controller](#controller)
     - [管理画面](#管理画面)
-        - [コード例](#コード例)
     - [API](#api)
-  - [service](#service)
+  - [view](#view)
     - [管理画面](#管理画面-1)
     - [API](#api-1)
-  - [controller](#controller)
-    - [管理画面](#管理画面-2)
-    - [API](#api-2)
-      - [コード例](#コード例-1)
-  - [view](#view)
   - [rspec](#rspec)
   - [seed](#seed)
   - [batch](#batch)
@@ -24,7 +20,7 @@
       - [全体](#全体)
       - [development](#development)
       - [development, test](#development-test)
-    - [注意点](#注意点)
+    - [注意点](#注意点-1)
   - [テスト戦略](#テスト戦略)
 
 <!-- /TOC -->
@@ -33,31 +29,16 @@
 
 ## model
 
-### 管理画面
-
 - `app/models/ドメイン名単数系.rb`
   - ex) `app/models/task.rb`
 
-##### コード例
+→ 肥大化しそうなら service 層を作成し、ロジックを逃すなど検討しても良い。
 
-```rb
+### 注意点
 
-```
-
-### API
-
-- `app/models/api/バージョン/ドメイン名単数系.rb`
-  - ex) `app/models/api/v1/task.rb`
-
-※devise の設計に合わせないなら users テーブルと devise 用のテーブルを分ける（大体分けた方が良い）
-
-## service
-
-### 管理画面
-
-### API
-
-※ここにバリデーションを書く
+devise の設計に合わせないなら users テーブルと devise 用のテーブルを分ける（大体分けた方が良い）  
+User の情報と devise で必要な認証情報でバリデーションがバッティングして、仕様通りの実装が出来なくなる可能性がある。  
+User モデルの子モデルに、UserAuthenticate モデルと、UserProfile モデルを作るのがスマート[（参考）](https://qiita.com/hatsu/items/5393a09e630de043f574)。
 
 ## controller
 
@@ -69,19 +50,26 @@
   - ex) `app/controllers/staff/tasks_controller.rb`
 
 ※管理画面用のアカウント種別によって異なる権限を付与できる  
-→ DB のレコードによって権限を分ける方法もあり。メリットデメリット
+→ DB のレコードによって権限を分ける方法もあり。
 
 ### API
 
-#### コード例
-
-```rb
-
-```
+- `app/controllers/api/バージョン/ドメイン名複数系_controller.rb`
+  - ex) `app/controllers/api/v1/tasks_controller.rb`
 
 ## view
 
-- `app/views/権限名/ドメイン名複数系/アクション名.rb`
+### 管理画面
+
+- `app/views/権限名/ドメイン名複数系/アクション名.html.erb`
+  - ex) `app/views/admin/tasks/index.html.erb`
+
+### API
+
+- `app/views/api/バージョン/ドメイン名複数系/アクション名.html.erb`
+  - ex) `app/views/api/v1/tasks/show.html.erb`
+
+API から HTML を返す時のみ利用
 
 ## rspec
 
@@ -89,7 +77,14 @@ rspec デフォルトのディレクトリを使う。
 
 ## seed
 
+- `db/seeds.rb`
+  → seeds コマンドで実行される
+- `db/seed/モデル名単数系.rb`
+  → モデル毎に分ける。共通のものもは `common.rb`などとするのが一般的。
+
 ## batch
+
+- `app/batches/処理名.rb`
 
 ## Gemfile
 

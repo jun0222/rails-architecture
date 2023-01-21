@@ -3,7 +3,8 @@
 <!-- TOC -->
 
 - [目次](#目次)
-- [ディレクトリ構成](#ディレクトリ構成)
+- [概要](#概要)
+- [構成](#構成)
   - [model](#model)
     - [注意点](#注意点)
   - [controller](#controller)
@@ -12,6 +13,7 @@
   - [view](#view)
     - [管理画面](#管理画面-1)
     - [API](#api-1)
+  - [JavaScript（管理画面用）](#javascript管理画面用)
   - [rspec](#rspec)
   - [seed](#seed)
   - [batch](#batch)
@@ -25,7 +27,12 @@
 
 <!-- /TOC -->
 
-# ディレクトリ構成
+# 概要
+
+- フロントエンド → 別アプリケーション。monorepo、マイクロサービス想定。
+- 基本的に本リポジトリで表示する view は管理画面のみ。
+
+# 構成
 
 ## model
 
@@ -70,6 +77,11 @@ User モデルの子モデルに、UserAuthenticate モデルと、UserProfile �
   - ex) `app/views/api/v1/tasks/show.html.erb`
 
 API から HTML を返す時のみ利用
+
+## JavaScript（管理画面用）
+
+- `app/packs/application.js` → 下記のファイルを import する
+- `app/javascript/ドメイン名単数系.js` → JS 処理を記述
 
 ## rspec
 

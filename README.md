@@ -143,3 +143,8 @@ rspec デフォルトのディレクトリを使う。
   - 実行も重く無いのでカバレッジ重視してできるだけ多くする
 - requests
   - テストケースを練ってケース数を増やしすぎない（複数の expect を書いて it は最小限）
+
+# 参考になるリポジトリ
+- Railsのみ： https://github.com/rubygems/rubygems.org
+- Rails x React: https://github.com/kazama1209/rails-react-todo
+- Rails x Vue: https://github.com/K-kind/Punct
